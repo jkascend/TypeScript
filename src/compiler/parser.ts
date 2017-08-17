@@ -2042,7 +2042,7 @@ namespace ts {
         // TYPES
 
         function parseTypeReference(): TypeReferenceNode {
-            const typeName = parseEntityName(/*allowReservedWords*/ false, Diagnostics.Type_expected);
+            const typeName = parseEntityName(/*allowReservedWords*/ true, Diagnostics.Type_expected);
             const node = <TypeReferenceNode>createNode(SyntaxKind.TypeReference, typeName.pos);
             node.typeName = typeName;
             if (!scanner.hasPrecedingLineBreak() && token() === SyntaxKind.LessThanToken) {
